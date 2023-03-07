@@ -1,18 +1,16 @@
 //  Составить алгоритм: если введенное число больше 7, то вывести “Привет”
 
 const prompt = require('prompt-sync')();
-const enteredNumber = prompt(`Enter the number: `);
-console.log(`You entered '${enteredNumber}'`);
 
-const enteredNumberRetyped = Number(enteredNumber);
-let resultText;
+const enteredValue = prompt('Enter the number: ');
+const enteredValueConverted = Number(enteredValue);
 
-if (isNaN(enteredNumberRetyped)) {
-    resultText = `Try again please, you typed not a number`;
-}   else    {
-    (enteredNumberRetyped > 7) ?
-        resultText = `Привет` :
-        resultText = `Entered number isn't more than 7`;
+if (isNaN(enteredValueConverted)) {
+    console.log(`Try again please, you typed not a number (you entered "${enteredValue}")`);
+} else if (!enteredValue) {
+    console.log('Try again please, you didn\'t type anything');
+} else {
+    (enteredValueConverted > 7) ?
+        console.log('Hello') :
+        console.log(`Entered number (${enteredValue}) isn't more than 7`);
 }
-
-console.log(resultText)
