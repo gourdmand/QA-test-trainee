@@ -5,7 +5,7 @@ const prompt = require('prompt-sync')();
 const enteredName = prompt('Enter the name: ');
 console.log(`You entered '${enteredName}'`);
 
-if (enteredName === `Вячеслав`) {
+if (enteredName.toLowerCase() === 'вячеслав') {
     console.log(`Привет, ${enteredName}`);
 }   else {
     console.log(`Нет такого имени`);
